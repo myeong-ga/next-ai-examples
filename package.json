@@ -14,7 +14,7 @@
     "@ai-sdk/provider": "1.0.9",
     "@ai-sdk/react": "^1.1.13",
     "@ai-sdk/ui-utils": "^1.1.19",
-    "ai": "^4.1.36",
+    "ai": "^4.1.61",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
