@@ -1,6 +1,7 @@
 'use client';
 
 import { useChat } from '@ai-sdk/react';
+import { Markdown } from './markdown';
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit, data, setData } =
@@ -28,7 +29,13 @@ export default function Chat() {
           {message.parts.map((part, index) => {
             switch (part.type) {
               case 'text':
-                return <span key={index}>{part.text}</span>;
+                return (
+                  <Markdown className="prose prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base prose-h5:text-sm prose-h6:text-xs">
+                    {part.text}
+                  </Markdown>
+                );
+                
+          
               case 'tool-invocation': {
                 const toolInvocation = part.toolInvocation;
                 const toolCallId = toolInvocation.toolCallId;
