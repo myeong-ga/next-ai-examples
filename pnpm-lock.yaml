@@ -21,8 +21,8 @@ importers:
         specifier: ^1.1.13
         version: 1.1.19(react@19.0.0)(zod@3.24.2)
       '@ai-sdk/ui-utils':
-        specifier: ^1.1.13
-        version: 1.1.16(zod@3.24.2)
+        specifier: ^1.1.19
+        version: 1.1.19(zod@3.24.2)
       ai:
         specifier: ^4.1.36
         version: 4.1.47(react@19.0.0)(zod@3.24.2)
@@ -112,6 +112,15 @@ packages:
 
   '@ai-sdk/ui-utils@1.1.16':
     resolution: {integrity: sha512-jfblR2yZVISmNK2zyNzJZFtkgX57WDAUQXcmn3XUBJyo8LFsADu+/vYMn5AOyBi9qJT0RBk11PEtIxIqvByw3Q==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      zod:
+        optional: true
+
+  '@ai-sdk/ui-utils@1.1.19':
+    resolution: {integrity: sha512-rDHy2uxlPMt3jjS9L6mBrsfhEInZ5BVoWevmD13fsAt2s/XWy2OwwKmgmUQkdLlY4mn/eyeYAfDGK8+5CbOAgg==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.0.0
@@ -937,6 +946,14 @@ snapshots:
     dependencies:
       '@ai-sdk/provider': 1.0.9
       '@ai-sdk/provider-utils': 2.1.10(zod@3.24.2)
+      zod-to-json-schema: 3.24.3(zod@3.24.2)
+    optionalDependencies:
+      zod: 3.24.2
+
+  '@ai-sdk/ui-utils@1.1.19(zod@3.24.2)':
+    dependencies:
+      '@ai-sdk/provider': 1.0.11
+      '@ai-sdk/provider-utils': 2.1.13(zod@3.24.2)
       zod-to-json-schema: 3.24.3(zod@3.24.2)
     optionalDependencies:
       zod: 3.24.2
