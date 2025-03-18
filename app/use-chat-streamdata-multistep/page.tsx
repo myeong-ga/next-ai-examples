@@ -2,10 +2,14 @@
 
 import { useChat } from '@ai-sdk/react';
 import { Markdown } from './markdown';
+import { TextShimmerLoader } from '@/lib/TextShimmerLoader';
 
 export default function Chat() {
-  const { messages, input, handleInputChange, handleSubmit, data, setData } =
-    useChat({ api: '/api/use-chat-streamdata-multistep' });
+
+  const { messages, input, handleInputChange, handleSubmit, data, setData ,status } =
+    useChat({ api: '/api/use-chat-streamdata-multistep' ,
+      experimental_throttle: 50,
+    });
 
   return (
     <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
@@ -25,12 +29,18 @@ export default function Chat() {
 
       {messages?.map(message => (
         <div key={message.id} className="whitespace-pre-wrap">
-          <strong>{`${message.role}: `}</strong>
+          { (message.role===  'user' ) &&  (<strong>{`${message.role}: `}</strong>) }
+
+          { (message.role===  'assistant' ) &&  (status === 'submitted' || status === 'streaming') && (
+            <div className='mb-4'>
+              <TextShimmerLoader size="lg" className="text-2xl font-bold high-contrast" />
+            </div>
+          )}
           {message.parts.map((part, index) => {
             switch (part.type) {
               case 'text':
                 return (
-                  <Markdown className="prose prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base prose-h5:text-sm prose-h6:text-xs">
+                  <Markdown id={message.id} className="prose prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base prose-h5:text-sm prose-h6:text-xs">
                     {part.text}
                   </Markdown>
                 );
