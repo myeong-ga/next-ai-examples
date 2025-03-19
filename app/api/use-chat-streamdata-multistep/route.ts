@@ -6,44 +6,25 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   return createDataStreamResponse({
+
     execute: async dataStream => {
-      // step 1 example: forced tool call
-      const result1 = streamText({
+      const result = streamText({
         model: openai('gpt-4o', { structuredOutputs: true }),
-        system: 'Extract the user goal from the conversation.',
+        system: 'You are a helpful assistant.',
         messages,
-        toolChoice: 'required', // force the model to call a tool
+        // toolChoice: 'required', // force the model to call a tool
         toolCallStreaming: true,
         tools: {
-          extractGoal: tool({
+          ExtractGoal: tool({
+            description: '사용자의 질의로부터 직관적인 목표를 추출합니다.',
             parameters: z.object({ goal: z.string() }),
             execute: async ({ goal }) => goal, // no-op extract tool
           }),
         },
+        maxSteps: 3
       });
 
-      // forward the initial result to the client without the finish event:
-      result1.mergeIntoDataStream(dataStream, {
-        experimental_sendFinish: false, // omit the finish event
-      });
-
-      // note: you can use any programming construct here, e.g. if-else, loops, etc.
-      // workflow programming is normal programming with this approach.
-
-      // example: continue stream with forced tool call from previous step
-      const result2 = streamText({
-        // different system prompt, different model, no tools:
-        model: openai('gpt-4o'),
-        system:
-          'You are a helpful assistant.',
-        // continue the workflow stream with the messages from the previous step:
-        messages: [...messages, ...(await result1.response).messages],
-      });
-
-      // forward the 2nd result to the client (incl. the finish event):
-      result2.mergeIntoDataStream(dataStream, {
-        experimental_sendStart: false, // omit the start event
-      });
+      result.mergeIntoDataStream(dataStream);
     },
   });
 }

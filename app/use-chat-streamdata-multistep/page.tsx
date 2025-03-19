@@ -6,27 +6,13 @@ import { TextShimmerLoader } from '@/lib/TextShimmerLoader';
 
 export default function Chat() {
 
-  const { messages, input, handleInputChange, handleSubmit, data, setData ,status } =
+  const { messages, input, handleInputChange, handleSubmit, status } =
     useChat({ api: '/api/use-chat-streamdata-multistep' ,
       experimental_throttle: 50,
     });
 
   return (
     <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
-      {data && (
-        <>
-          <pre className="p-4 text-sm bg-gray-100">
-            {JSON.stringify(data, null, 2)}
-          </pre>
-          <button
-            onClick={() => setData(undefined)}
-            className="px-4 py-2 mt-2 text-white bg-blue-500 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-          >
-            Clear Data
-          </button>
-        </>
-      )}
-
       {messages?.map(message => (
         <div key={message.id} className="whitespace-pre-wrap">
           { (message.role===  'user' ) &&  (<strong>{`${message.role}: `}</strong>) }
@@ -46,12 +32,11 @@ export default function Chat() {
             switch (part.type) {
               case 'text':
                 return (
-                  <Markdown key={message.id} id={message.id} className="prose prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base prose-h5:text-sm prose-h6:text-xs">
+                  <Markdown key={index} id={message.id} className="prose prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base prose-h5:text-sm prose-h6:text-xs">
                     {part.text}
                   </Markdown>
                 );
                 
-          
               case 'tool-invocation': {
                 const toolInvocation = part.toolInvocation;
                 const toolCallId = toolInvocation.toolCallId;
@@ -62,9 +47,9 @@ export default function Chat() {
                     key={toolCallId}
                     className="p-4 my-2 text-gray-500 border border-gray-300  bg-[#F6F4EC] rounded"
                   >
-                    <h4 className="mb-2 text-[#4F531F] "><b>{toolName?? ''}</b></h4>
+                    <h4 className="mb-2 text-[#4F531F] "><b>Tool : {toolName?? ''}</b></h4>
                     <div className="flex flex-col gap-2 text-[#341C02]">
-                      {args?.goal && <div>{args.goal}</div>}
+                      {args?.goal && <div> {args.goal}</div>}
                     </div>
                   </div>
                 );
@@ -78,11 +63,9 @@ export default function Chat() {
 
       <form
         onSubmit={e => {
-          setData(undefined); // clear stream data
           handleSubmit(e);
         }}
       >
-  
         <input
           className="fixed bottom-0 w-full max-w-md p-2 mb-8  border-2 rounded shadow-xl outline-none focus:border-[#EFC87D] transition-colors"
           value={input}
