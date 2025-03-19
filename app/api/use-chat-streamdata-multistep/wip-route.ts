@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     execute: async dataStream => {
       // step 1 example: forced tool call
       const result1 = streamText({
-        model: openai('gpt-4o', { structuredOutputs: true }),
+        model: openai('gpt-4o-mini', { structuredOutputs: true }),
         system: '사용자의 질의로부터 질문의도를 추출합니다.',
         messages,
         toolChoice: 'required', // force the model to call a tool
@@ -33,7 +33,7 @@ export async function POST(req: Request) {
       // example: continue stream with forced tool call from previous step
       const result2 = streamText({
         // different system prompt, different model, no tools:
-        model: openai('gpt-4o'),
+        model: openai('gpt-4o-mini'),
         system:
           'You are a helpful assistant.',
         // continue the workflow stream with the messages from the previous step:

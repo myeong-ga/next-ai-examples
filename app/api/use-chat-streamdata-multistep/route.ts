@@ -9,7 +9,7 @@ export async function POST(req: Request) {
 
     execute: async dataStream => {
       const result = streamText({
-        model: openai('gpt-4o', { structuredOutputs: true }),
+        model: openai('gpt-4o-mini', { structuredOutputs: true }),
         system: 'You are a helpful assistant.',
         messages,
         // toolChoice: 'required', // force the model to call a tool

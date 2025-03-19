@@ -17,16 +17,11 @@ export default function Chat() {
         <div key={message.id} className="whitespace-pre-wrap">
           { (message.role===  'user' ) &&  (<strong>{`${message.role}: `}</strong>) }
 
-          { (message.role===  'assistant' ) && (status === 'submitted'|| status === 'streaming' )? (
+          { (message.role===  'assistant' ) && (status === 'submitted'|| status === 'streaming' )&&(
             <div className='mb-4'>
-              <p>{status}</p><TextShimmerLoader size="lg" className="text-2xl font-bold high-contrast" />
+              <TextShimmerLoader size="sm" className="high-contrast" />
             </div>
-          ) : (message.role===  'assistant'  &&  status === 'ready')?
-          (
-            <div className='mb-4'>
-              <p>{status}</p><p className="text-2xl font-bold  text-muted-foreground">Shallow Thinking...</p> 
-            </div>
-          ) : null}
+          ) }
 
           {message.parts.map((part, index) => {
             switch (part.type) {

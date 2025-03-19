@@ -10,7 +10,7 @@ export async function POST(req: Request) {
       dataStream.writeData('initialized call');
 
       const result = streamText({
-        model: openai('gpt-4o'),
+        model: openai('gpt-4o-mini'),
         messages,
         onChunk() {
           dataStream.writeMessageAnnotation({ chunk: '123' });

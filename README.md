@@ -1,15 +1,13 @@
 
 ![HITL](tools.png)
 
-## Getting Started
+## 시작하기
 
-First, 
 .env.local.example 을 .env.local로 copy 하고 llm provider 에 맞게 API Key 값을 세팅
 
-run the development server:
 
 ```bash
-
+pnpm install
 pnpm dev
 
 ```
