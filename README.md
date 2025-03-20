@@ -3,12 +3,18 @@
 
 ## 시작하기
 
-.env.local.example 을 .env.local로 copy 하고 llm provider 에 맞게 API Key 값을 세팅해야 합니다.
+.env.local.example 을 .env.local 로 copy 하고 OPENAI_API_KEY 값을 세팅해야 합니다.
+
+```bash
+cp .env.local.example .env.local
+```
 
 gemini-2.0-flash-exp 모델을 사용하려면  GOOGLE_GENERATIVE_AI_API_KEY 가 정의되어야 합니다.
 
 'Loading Spinner' 데모를 찾아오신 분들은 page.tsx 를 열어 redirect('/use-chat-streamdata-multistep') 구문을 활성화 합니다.
- 
+
+'Human In The Loop' 데모는 page.tsx 를 열어 redirect('/use-chat-human-in-the-loop') 구문을 활성화 합니다.
+
 
 ```bash
 pnpm install
