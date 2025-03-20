@@ -1,8 +1,9 @@
 'use client';
 
 import { useChat } from '@ai-sdk/react';
-import { Markdown } from './markdown';
+
 import { TextShimmerLoader } from '@/lib/TextShimmerLoader';
+import { Markdown } from '@/lib/markdown';
 
 export default function Chat() {
 
