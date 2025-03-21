@@ -1,3 +1,5 @@
+import 'server-only'
+
 import { generateId, Message } from 'ai';
 import { existsSync, mkdirSync } from 'fs';
 import { readFile, writeFile } from 'fs/promises';
