@@ -1,4 +1,5 @@
-import { loadChat, saveChat } from '@/lib/chat-store';
+
+import { loadChat, saveChat } from '@/lib/server/chat-store';
 import { google } from '@ai-sdk/google';
 
 import {

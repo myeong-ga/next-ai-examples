@@ -1,4 +1,4 @@
-import { createChat } from '@/lib/chat-store';
+import { createChat } from '@/lib/server/chat-store';
 import { redirect } from 'next/navigation';
 
 
