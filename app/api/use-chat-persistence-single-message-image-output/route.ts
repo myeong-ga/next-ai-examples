@@ -50,7 +50,9 @@ export async function POST(req: Request) {
           });
         },
       });
-
+//Access the full provider response (when using generateText())
+// console.log(JSON.stringify(result.response.headers, null, 2));
+// console.log(JSON.stringify(result.response.body, null, 2));
       result.mergeIntoDataStream(dataStream);
     },
     onError: error => {
