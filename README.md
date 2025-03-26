@@ -3,7 +3,7 @@
 
 ## 시작하기
 
-.env.local.example 을 .env.local 로 copy 하고 OPENAI_API_KEY 값을 세팅해야 합니다.
+.env.local.example 을 .env.local 로 copy 하고 OPENAI_API_KEY, ANTHROPIC_API_KEY 값을 세팅해야 합니다.
 
 ```bash
 cp .env.local.example .env.local
@@ -36,6 +36,10 @@ pnpm dev
 - 경로 : use-chat-persistence-single-message-image-output.
 - Sample PROMPT : '내 강아지가 AI 기술을 배우고 싶어한다. 수업 첫날 강아지는 노트북 앞에 앉아 선글라스를 쓰고 진지한 표정으로 코딩을 한다'.
 
+4. MCP Client & Server
+- Client transport for stdio: this will connect to a server by spawning a process and communicating with it over stdin/stdout.
+- 경로 : use-chat-mcp-hitl.
+- Sample PROMPT :  'Which Pokemon could best defeat Feebas? Choose one and share details about it.'.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
