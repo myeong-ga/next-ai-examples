@@ -9,7 +9,7 @@ export async function POST(req: Request) {
   const mcpClient = await experimental_createMCPClient({
     transport: {
       type: 'sse',
-      url: 'https://actions.zapier.com/mcp/sk-ak-N9N4G4QJkZtaebuNgJ0CFX1eJW/sse',
+      url: 'https://actions.zapier.com/mcp/{$API-KEY}/sse',
     },
   });
 
