@@ -1,7 +1,7 @@
 import { anthropic } from '@ai-sdk/anthropic';
 import { createDataStreamResponse, Message, streamText, experimental_createMCPClient} from 'ai';
 import { processToolCalls } from './utils';
-import { tools } from './tools';
+import { tools as tools_hitl } from './tools';
 import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
 
 // Allow streaming responses up to 30 seconds
@@ -32,7 +32,7 @@ export async function POST(req: Request) {
         {
           messages,
           dataStream,
-          tools,
+          tools: tools_hitl,
         },
         {
            // type-safe object for tools without an execute function
@@ -47,15 +47,16 @@ export async function POST(req: Request) {
 
       const mcpClientTools = await mcpClient.tools();
   
-      const toolset = {
-        ...mcpClientTools,
-        ...tools,
+      const myToolSet = {
+        ...mcpClientTools,  // tools from the MCP
+        ...tools_hitl,      // tools from the Human-in-the-Loop
       };
 
       const result = streamText({
         model: anthropic('claude-3-5-haiku-latest'),
         messages: processedMessages,
-        tools: toolset,
+        maxSteps: 10,
+        tools: myToolSet,
         onStepFinish: ({ toolCalls, toolResults, finishReason, usage, text }) => {
           stepCounter++;
           console.log(`\n📊 Step ${stepCounter} Finished:`);
