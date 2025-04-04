@@ -41,6 +41,12 @@ pnpm dev
 - 경로 : use-chat-mcp-hitl.
 - Sample PROMPT :  'Which Pokemon could best defeat Feebas? Choose one and share details about it.'.
 
+5. Server Action with gemini-2.0-flash-lite
+- gemini-2.0-flash-lite 모델의 Story 생성능력 데모
+- 경로 : server-action-gemini-2.0-flash-lite
+- Sample PROMPT :  'CHAE 와 SUH 는 오로라 여행중. A,B,C ...H 까지 각 철자로 시작하는 문장 8개를 생성해줘'.
+
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
