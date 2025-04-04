@@ -20,6 +20,7 @@ export async function POST(req: Request) {
           tools,
         },
         {
+          // toolInstance : toolInvocation.result 가 Structured Input defined 와 맞으면 여기에서 executeFunction을 구한다.
           // type-safe object for tools without an execute function
           getWeatherInformation: async ({ city }) => {
             const conditions = ['sunny', 'cloudy', 'rainy', 'snowy'];

@@ -7,6 +7,7 @@ import {
 } from '../api/use-chat-human-in-the-loop/utils';
 import { tools } from '../api/use-chat-human-in-the-loop/tools';
 
+
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit, addToolResult } =
     useChat({
@@ -26,6 +27,14 @@ export default function Chat() {
     ),
   );
 
+    /**
+     * Assistant messages can have text, reasoning and tool invocation parts.
+     * User messages can have text parts.
+     * 
+     *  parts?: Array<TextUIPart | ReasoningUIPart | ToolInvocationUIPart | SourceUIPart | FileUIPart>;
+     * 
+     */
+    
   return (
     <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
       {messages?.map((m: Message) => (

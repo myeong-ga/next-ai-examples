@@ -101,12 +101,12 @@ export async function processToolCalls<
       }
 
       // Forward updated tool result to the client.
-      dataStream.write(
-        formatDataStreamPart('tool_result', {
-          toolCallId: toolInvocation.toolCallId,
-          result,
-        }),
-      );
+      // dataStream.write(
+      //   formatDataStreamPart('tool_result', {
+      //     toolCallId: toolInvocation.toolCallId,
+      //     result,
+      //   }),
+      // );
 
       // Return updated toolInvocation with the actual result.
       return {

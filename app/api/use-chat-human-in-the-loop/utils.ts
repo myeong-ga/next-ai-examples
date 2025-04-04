@@ -8,6 +8,7 @@ import {
 import { z } from 'zod';
 
 // Approval string to be shared across frontend and backend
+// NOTE : Structured Input defined here will be used in the page.tsx
 export const APPROVAL = {
   YES: 'Yes, confirmed.',
   NO: 'No, denied.',
@@ -62,7 +63,7 @@ export async function processToolCalls<
       // Only process tool invocations parts
       if (part.type !== 'tool-invocation') return part;
 
-      const { toolInvocation } = part;
+      const { toolInvocation }= part;
       const toolName = toolInvocation.toolName;
 
       // Only continue if we have an execute function for the tool (meaning it requires confirmation) and it's in a 'result' state
@@ -70,6 +71,8 @@ export async function processToolCalls<
         return part;
 
       let result;
+
+      //toolInvocation.result : Structured Input from page.tsx
 
       if (toolInvocation.result === APPROVAL.YES) {
         // Get the tool and check if the tool has an execute function.
