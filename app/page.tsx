@@ -15,6 +15,8 @@ export default function HomePage() {
   //redirect('/use-chat-mcp-hitl');
 
   // 5. Server Action with gemini-2.0-flash-lite
-  redirect('/server-action-gemini-2.0-flash-lite');
+  //redirect('/server-action-gemini-2.0-flash-lite');
   
+  // 6. Visual Reasoning with llama-4-scout-17b-16e-instruct
+  redirect('/use-chat-vision');
 }

@@ -47,6 +47,14 @@ pnpm dev
 - Sample PROMPT :  'CHAE 와 SUH 는 오로라 여행중. A,B,C ...H 까지 각 철자로 시작하는 문장 8개를 생성해줘'.
 
 
+6. Visual Reasoning Chat with Llama 4 Scout
+- llama-4-scout-17b-16e-instruct 모델의 Visual Reasoning 능력 데모
+- 경로 : use-chat-vision
+- Sample dataset :  https://lora-vqa.github.io/
+- GROQ_API_KEY 등록이 필요합니다 https://console.groq.com/keys
+
+
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
