@@ -17,6 +17,7 @@
     "@ai-sdk/react": "^1.2.6",
     "@ai-sdk/ui-utils": "^1.2.5",
     "@modelcontextprotocol/sdk": "^1.8.0",
+    "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-slot": "^1.1.2",
     "ai": "^4.3.2",
     "class-variance-authority": "^0.7.1",

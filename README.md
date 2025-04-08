@@ -22,23 +22,23 @@ pnpm dev
 ## 프로젝트 소개.
 1. Human-In-The-Loop.
 - Tool Invocation을 진행하기 전에 사용자에게 확인을 받습니다.
-- 경로 : use-chat-human-in-the-loop.
+- 경로 : use-chat-human-in-the-loop
 - Sample PROMPT : '5만원 보내드려'.
 
 2. Streaming multi-step agent workflows
 - Tool Invocation의 결과를 stream 으로 UI 전달. useChat status를 이용하여 'Thinking...' animation 제공. 
 - 사용자질의 의도를 파악하는 tool 제공.
-- 경로 : use-chat-streamdata-multistep.
+- 경로 : use-chat-streamdata-multistep
 - Sample PROMPT : '미국 연준이 기준금리를 올린 이후로 글로벌 금융시장이 흔들리는 것 같은데, 단순히 금리가 높아져서 그런 건 아닌 것 같아. 예를 들어, 채권 시장에서 장기 금리는 생각보다 덜 오르고 있고, 주식시장에서는 일부 기술주는 오히려 반등하는 움직임이 보여. 이런 현상이 단순한 유동성 축소 때문인지, 아니면 시장이 어떤 기대를 반영하는 건지 알고 싶어. 특히, 금리 정책이 실물 경제와 자산 가격에 미치는 영향을 더 깊이 이해하려면 어떤 지표를 봐야 할까?'.
 
 3. gemini-2.0-flash-exp 이용 TEXT, IMAGE 질의.
 - LangChain 의 checkpoint와 같은기능을 하는 step 별 file 생성.
-- 경로 : use-chat-persistence-single-message-image-output.
+- 경로 : use-chat-persistence-single-message-image-output
 - Sample PROMPT : '내 강아지가 AI 기술을 배우고 싶어한다. 수업 첫날 강아지는 노트북 앞에 앉아 선글라스를 쓰고 진지한 표정으로 코딩을 한다'.
 
 4. MCP Client & Server
 - Client transport for stdio: this will connect to a server by spawning a process and communicating with it over stdin/stdout.
-- 경로 : use-chat-mcp-hitl.
+- 경로 : use-chat-mcp-hitl
 - Sample PROMPT :  'Which Pokemon could best defeat Feebas? Choose one and share details about it.'.
 
 5. Server Action with gemini-2.0-flash-lite
@@ -52,6 +52,15 @@ pnpm dev
 - 경로 : use-chat-vision
 - Sample dataset :  https://lora-vqa.github.io/
 - GROQ_API_KEY 등록이 필요합니다 https://console.groq.com/keys
+
+
+7. Multiple images Visual Reasoning Chat with Llama 4 Scout
+- llama-4-scout-17b-16e-instruct 모델의 Visual Reasoning 능력 데모
+- 최대 2개 이미지를 지원하고 썸네일과 모달 기능을 추가하는 구현
+- 경로 : use-chat-images-vision
+- Sample dataset :  https://lora-vqa.github.io/
+- GROQ_API_KEY 등록이 필요합니다 https://console.groq.com/keys
+
 
 
 

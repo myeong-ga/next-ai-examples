@@ -18,5 +18,8 @@ export default function HomePage() {
   //redirect('/server-action-gemini-2.0-flash-lite');
   
   // 6. Visual Reasoning with llama-4-scout-17b-16e-instruct
-  redirect('/use-chat-vision');
+  //redirect('/use-chat-vision');
+
+  // 7. Multi Images Visual Reasoning with llama-4-scout-17b-16e-instruct
+  redirect('/use-chat-images-vision');
 }
