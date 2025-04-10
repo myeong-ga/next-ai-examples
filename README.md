@@ -62,6 +62,13 @@ pnpm dev
 - GROQ_API_KEY 등록이 필요합니다 https://console.groq.com/keys
 
 
+8. Multiple images Visual Reasoning Chat with Llama 4 Scout
+- grok-2-image 모델의 Image 생성 능력 데모
+- 경로 : use-chat-xai-image
+- Sample PROMPT : "나를 그려줘"
+- GXAI_API_KEY 등록이 필요합니다 https://console.x.ai/
+
+
 
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

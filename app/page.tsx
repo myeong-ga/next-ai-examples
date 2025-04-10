@@ -21,5 +21,9 @@ export default function HomePage() {
   //redirect('/use-chat-vision');
 
   // 7. Multi Images Visual Reasoning with llama-4-scout-17b-16e-instruct
-  redirect('/use-chat-images-vision');
+  //redirect('/use-chat-images-vision');
+
+  // 8. XAI Image Generation with grok-2-image
+  redirect('/use-chat-xai-image');
+  // 9. XAI Image Generation with grok-2-image
 }
