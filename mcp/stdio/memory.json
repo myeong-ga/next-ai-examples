@@ -1,0 +1,4 @@
+{"type":"entity","name":"default_user","entityType":"Person","observations":["직업: 데이터 분석가","Profession: Data Analyst"]}
+{"type":"entity","observations":["짜장면을 먹음","10000원 지불"],"entityType":"음식점","name":"동보성"}
+{"type":"entity","entityType":"음식점","observations":["볶음밥을 먹음","10000원 지불","4월 11일 점심"],"name":"팔진"}
+{"type":"entity","name":"만월경","observations":["4월 11일 오후에 커피를 마심"],"entityType":"카페"}

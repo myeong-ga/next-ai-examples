@@ -4,14 +4,13 @@ import { Message, useChat } from '@ai-sdk/react';
 import {
   APPROVAL,
   getToolsRequiringConfirmation,
-} from '../api/use-chat-mcp-hitl/utils';
-import { tools } from '../api/use-chat-mcp-hitl/tools';
+} from '../api/use-chat-mcp-mem/utils';
+import { tools } from '../api/use-chat-mcp-mem/tools';
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit, addToolResult } =
     useChat({
-      api: '/api/use-chat-mcp-hitl',
-      maxSteps: 5,
+      api: '/api/use-chat-mcp-mem'
     });
 
   // HITL 가 필요한 tool

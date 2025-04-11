@@ -36,10 +36,17 @@ pnpm dev
 - 경로 : use-chat-persistence-single-message-image-output
 - Sample PROMPT : '내 강아지가 AI 기술을 배우고 싶어한다. 수업 첫날 강아지는 노트북 앞에 앉아 선글라스를 쓰고 진지한 표정으로 코딩을 한다'.
 
-4. MCP Client & Server
+4. MCP transport: stdio Client & Server
 - Client transport for stdio: this will connect to a server by spawning a process and communicating with it over stdin/stdout.
-- 경로 : use-chat-mcp-hitl
-- Sample PROMPT :  'Which Pokemon could best defeat Feebas? Choose one and share details about it.'.
+- 경로 : use-chat-mcp-mem
+- Sample PROMPT :  'I did .... today'. 'what did I do today ?'
+
+4-2. MCP transport:sse Client & Server
+- The SSE can be configured using a simple object with a type and url property:
+- 경로 : use-chat-mcp-sse
+- Sample PROMPT :  'List all products, then find availability for Product 1.
+
+
 
 5. Server Action with gemini-2.0-flash-lite
 - gemini-2.0-flash-lite 모델의 Story 생성능력 데모

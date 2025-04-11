@@ -10,7 +10,7 @@ const server = new McpServer({
 });
 
 server.tool(
-  'getpokemon',
+  'get-pokemon',
   'Get Pokemon details by name',
   {
     name: z.string(),

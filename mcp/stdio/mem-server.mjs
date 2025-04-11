@@ -358,7 +358,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
   if (!args) {
     throw new Error(`No arguments provided for tool: ${name}`);
   }
-
+  console.log(name);
   switch (name) {
     case "create_entities":
       return { content: [{ type: "text", text: JSON.stringify(await knowledgeGraphManager.createEntities(args.entities), null, 2) }] };
@@ -389,7 +389,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("Knowledge Graph MCP Server running on stdio");
+  console.log("Knowledge Graph MCP Server running on stdio");
 }
 
 main().catch((error) => {
