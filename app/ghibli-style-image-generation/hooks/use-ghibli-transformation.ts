@@ -79,8 +79,8 @@ export function useGhibliTransformation() {
   }
 
   // Process image data to ensure proper format
-  const processImageData = (imageBase64?: string): string | null => {
-    if (!imageBase64) return null
+  const processImageData = (imageBase64?: string): string | undefined => {
+    if (!imageBase64) return undefined
 
     // Check if the image data already has a data URL prefix
     if (imageBase64.startsWith("data:image/")) {
@@ -95,7 +95,7 @@ export function useGhibliTransformation() {
       return `data:image/jpeg;base64,${imageBase64}`
     }
 
-    return null
+    return undefined
   }
 
   // Add step to a specific model's generation process
@@ -216,14 +216,14 @@ export function useGhibliTransformation() {
         if (result) {
           const processedImage = processImageData(result.imageBase64)
 
-          // Update the model's result
+          // Update the model's result - FIXED: Using undefined instead of null
           setModelStates((prev) => ({
             ...prev,
             [modelConfig.id]: {
               ...prev[modelConfig.id],
               result: {
                 ...result,
-                imageBase64: processedImage? processedImage : undefined,
+                imageBase64: processedImage, // processedImage는 이미 string | undefined 타입
               },
             },
           }))

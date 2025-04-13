@@ -52,7 +52,11 @@ export const ModelResultCard = ({ result, modelConfig, onDownload }: ModelResult
                 variant="outline"
                 size="sm"
                 className="absolute bottom-4 right-4 bg-white/80 hover:bg-white"
-                onClick={() => onDownload(result.imageBase64 || "", modelConfig.displayName)}
+                onClick={() => {
+                  if (result.imageBase64) {
+                    onDownload(result.imageBase64, modelConfig.displayName);
+                  }
+                }}
               >
                 <Download className="h-4 w-4 mr-2" />
                 Download
@@ -76,3 +80,5 @@ export const ModelResultCard = ({ result, modelConfig, onDownload }: ModelResult
     </Card>
   )
 }
+
+export default ModelResultCard

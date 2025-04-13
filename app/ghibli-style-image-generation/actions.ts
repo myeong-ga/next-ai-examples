@@ -39,6 +39,8 @@ export async function generateGhibliDescription(file: File, modelConfig: ModelCo
           },
         ],
       })
+      console.log(JSON.stringify(result.response.headers, null, 2));
+      console.log(JSON.stringify(result.response.body, null, 2));
     } else {
       // For future implementation of other providers like OpenAI
       throw new Error(`Provider ${modelConfig.provider} is not yet implemented`)

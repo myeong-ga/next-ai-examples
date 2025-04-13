@@ -4,7 +4,8 @@ import { Card } from "@/components/ui/card"
 import { Loader2, Upload } from "lucide-react"
 import Image from "next/image"
 import { GenerationProcessViewer } from "./components/generation-process-viewer"
-import { ModelResultCard } from "./components/model-result-card"
+// 수정: 가져오기 방식 수정
+import ModelResultCard from "./components/model-result-card"
 import { useGhibliTransformation } from "./hooks/use-ghibli-transformation"
 
 export default function Home() {
