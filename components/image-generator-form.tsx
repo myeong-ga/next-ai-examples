@@ -10,7 +10,7 @@ import { Loader2, ImageIcon, AlertTriangle, Download } from "lucide-react"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 // Import generateId from the ai package
 import { generateId } from "ai"
-import { GeneratedImage, generateImageAction } from "@/app/use-chat-xai-image/actions"
+import { GeneratedImage, generateImageAction } from "@/app/server-action-xai-image/actions"
 
 export function ImageGeneratorForm() {
   const [isGenerating, setIsGenerating] = useState(false)

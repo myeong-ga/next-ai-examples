@@ -77,6 +77,14 @@ pnpm dev
 
 
 
+9. 스튜디오 지브리 스타일 이미지 변환기
+- gemini-2-flash 모델의 Image 생성 능력 데모
+- 경로 : ghibli-style-image-generation
+- Sample PROMPT : 개인 소장 이미지 ( 1M 이하 지원)
+- GOOGLE_GENERATIVE_AI_API_KEY 등록이 필요합니다. GOOGLE AI STUDIO 에서 생성
+
+
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

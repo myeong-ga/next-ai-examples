@@ -24,6 +24,8 @@ export default function HomePage() {
   //redirect('/use-chat-images-vision');
 
   // 8. XAI Image Generation with grok-2-image
-  redirect('/use-chat-xai-image');
-  // 9. XAI Image Generation with grok-2-image
+  //redirect('/use-chat-xai-image');
+
+  // 9. 스튜디오 지브리 스타일 이미지 변환기
+  redirect('/ghibli-style-image-generation');
 }
