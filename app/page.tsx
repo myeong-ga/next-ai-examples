@@ -12,7 +12,7 @@ export default function HomePage() {
   //redirect('/use-chat-persistence-single-message-image-output');
 
   // 4. MCP client with Human in the Loop
-  //redirect('/use-chat-mcp-hitl');
+  //redirect('/use-chat-mcp-mem');
 
   // 5. Server Action with gemini-2.0-flash-lite
   //redirect('/server-action-gemini-2.0-flash-lite');
@@ -24,7 +24,7 @@ export default function HomePage() {
   //redirect('/use-chat-images-vision');
 
   // 8. XAI Image Generation with grok-2-image
-  //redirect('/use-chat-xai-image');
+  //redirect('/server-action-xai-image');
 
   // 9. 스튜디오 지브리 스타일 이미지 변환기
   redirect('/ghibli-style-image-generation');
